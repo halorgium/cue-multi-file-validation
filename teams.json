@@ -1,7 +1,9 @@
-[
+{
+  "teams": [
     {
-        "name": "admins",
-        "description": "Administrators",
-        "owner": "jim"
+      "name": "admins",
+      "description": "Administrators",
+      "owner": "jim"
     }
-]
+  ]
+}

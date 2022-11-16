@@ -1,6 +1,6 @@
 package validate
 
-users2: [
+users: [
   {
     name: "jim"
     email: "jim@example.com"

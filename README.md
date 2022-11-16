@@ -4,23 +4,13 @@
 
 ```
 (cd source && cue export -e 'users') > users.json
+(cd source && cue export -e 'teams') > teams.json
 ```
 
-command:
+vet fails:
 ```
-cue vet .
-```
-
-result is expected
-
-Uncommenting `users` results in:
-```
-cue vet . -c
-```
-
-```
-users.0.email: incomplete value string:
-    ./schema.cue:5:10
-users.0.name: incomplete value string:
-    ./schema.cue:4:9
+% cue vet . users.json teams.json
+conflicting values [{name:"jim",email:"jim@example.com"}] and {#User:{name:string,email:string},#Team:{name:string,description:string},users:[#User],teams:[#Team]} (mismatched types list and struct):
+    ./schema.cue:1:1
+    ./users.json:1:1
 ```

@@ -5,4 +5,10 @@ package validate
   email: string
 }
 
-users: [#User]
+#Team: {
+  name: string
+  description: string
+}
+
+// users: [#User]
+teams: [#Team]

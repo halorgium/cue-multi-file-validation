@@ -10,12 +10,17 @@
 ## vetting
 
 ```
-cue vet schema.cue *.json
-teams.0.owner.#known: conflicting values true and false:
-    ./schema.cue:13:10
-    ./schema.cue:20:11
-    ./schema.cue:21:11
-    ./schema.cue:25:9
+cue vet . -c
+teams_json.contents: incomplete value string:
+    ./schema.cue:38:13
+users_json.contents: incomplete value string:
+    ./schema.cue:31:13
+error in call to encoding/json.Unmarshal: non-concrete value string:
+    ./schema.cue:34:8
+    ./schema.cue:31:13
+error in call to encoding/json.Unmarshal: non-concrete value string:
+    ./schema.cue:41:8
+    ./schema.cue:38:13
 ```
 
 ## exporting

@@ -10,5 +10,5 @@ package validate
   description: string
 }
 
-// users: [#User]
+users: [#User]
 teams: [#Team]

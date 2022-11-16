@@ -13,11 +13,11 @@ import "list"
   owner: #Owner
 }
 
-#UserNames: [for u in users { u.name }]
+user_names: [for u in users { u.name }]
 
 #Owner: O={
   string
-  #known: list.Contains(#UserNames, O)
+  #known: list.Contains(user_names, O)
   #known: true
 }
 
